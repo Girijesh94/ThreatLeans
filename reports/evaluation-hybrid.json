@@ -1,0 +1,223 @@
+{
+  "corpus_generation": "f7c914863f4230a5",
+  "retrieval_mode": "hybrid",
+  "case_count": 16,
+  "retrieval_pass_rate": 1.0,
+  "median_ms": 11.065000000000001,
+  "p95_ms": 29.68,
+  "scope": "Fixed small retrieval workload; not a general intelligence accuracy benchmark. No paid provider calls.",
+  "cases": [
+    {
+      "question": "What is known about CVE-2021-44228?",
+      "expected_id": "KEV:CVE-2021-44228",
+      "retrieved_ids": [
+        "KEV:CVE-2021-44228",
+        "CVE:CVE-2021-44228",
+        "NVD:CVE-2021-44228"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 8,
+      "supported_claim_count": 8,
+      "elapsed_ms": 29.68
+    },
+    {
+      "question": "CVE-2023-34362",
+      "expected_id": "KEV:CVE-2023-34362",
+      "retrieved_ids": [
+        "KEV:CVE-2023-34362"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 3,
+      "supported_claim_count": 3,
+      "elapsed_ms": 10.57
+    },
+    {
+      "question": "CVE-2024-3094",
+      "expected_id": "NVD:CVE-2024-3094",
+      "retrieved_ids": [
+        "NVD:CVE-2024-3094",
+        "CVE:CVE-2024-3094"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 5,
+      "supported_claim_count": 5,
+      "elapsed_ms": 10.23
+    },
+    {
+      "question": "CVE-2017-0144",
+      "expected_id": "KEV:CVE-2017-0144",
+      "retrieved_ids": [
+        "KEV:CVE-2017-0144"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 3,
+      "supported_claim_count": 3,
+      "elapsed_ms": 10.61
+    },
+    {
+      "question": "CVE-2021-26855",
+      "expected_id": "KEV:CVE-2021-26855",
+      "retrieved_ids": [
+        "KEV:CVE-2021-26855"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 3,
+      "supported_claim_count": 3,
+      "elapsed_ms": 10.59
+    },
+    {
+      "question": "CVE-2023-4966",
+      "expected_id": "KEV:CVE-2023-4966",
+      "retrieved_ids": [
+        "KEV:CVE-2023-4966"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 3,
+      "supported_claim_count": 3,
+      "elapsed_ms": 10.32
+    },
+    {
+      "question": "Explain T1566",
+      "expected_id": "ATTACK:T1566",
+      "retrieved_ids": [
+        "ATTACK:T1566"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 3,
+      "supported_claim_count": 3,
+      "elapsed_ms": 11.05
+    },
+    {
+      "question": "Explain T1059",
+      "expected_id": "ATTACK:T1059",
+      "retrieved_ids": [
+        "ATTACK:T1059"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 3,
+      "supported_claim_count": 3,
+      "elapsed_ms": 11.22
+    },
+    {
+      "question": "Explain T1078",
+      "expected_id": "ATTACK:T1078",
+      "retrieved_ids": [
+        "ATTACK:T1078"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 3,
+      "supported_claim_count": 3,
+      "elapsed_ms": 11.05
+    },
+    {
+      "question": "Explain T1486",
+      "expected_id": "ATTACK:T1486",
+      "retrieved_ids": [
+        "ATTACK:T1486"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 3,
+      "supported_claim_count": 3,
+      "elapsed_ms": 11.22
+    },
+    {
+      "question": "Explain G0016",
+      "expected_id": "ATTACK:G0016",
+      "retrieved_ids": [
+        "ATTACK:G0016"
+      ],
+      "retrieval_pass": true,
+      "status": "supported",
+      "claim_count": 6,
+      "supported_claim_count": 6,
+      "elapsed_ms": 11.08
+    },
+    {
+      "question": "phishing",
+      "expected_id": "ATTACK:T1566",
+      "retrieved_ids": [
+        "ATTACK:T1598",
+        "ATTACK:T1566",
+        "ATTACK:T1598.004",
+        "ATTACK:T1566.004",
+        "ATTACK:T1598.003",
+        "ATTACK:T1566.002",
+        "ATTACK:T1683.001",
+        "ATTACK:T1586.002"
+      ],
+      "retrieval_pass": true,
+      "status": "needs_review",
+      "claim_count": 24,
+      "supported_claim_count": 24,
+      "elapsed_ms": 10.76
+    },
+    {
+      "question": "data encrypted for impact",
+      "expected_id": "ATTACK:T1486",
+      "retrieved_ids": [
+        "ATTACK:T1486",
+        "ATTACK:M1041",
+        "ATTACK:T1565.001",
+        "ATTACK:T1565",
+        "ATTACK:S1162",
+        "ATTACK:T1565.002",
+        "ATTACK:T1657",
+        "ATTACK:T1485"
+      ],
+      "retrieval_pass": true,
+      "status": "needs_review",
+      "claim_count": 24,
+      "supported_claim_count": 24,
+      "elapsed_ms": 13.98
+    },
+    {
+      "question": "valid accounts",
+      "expected_id": "ATTACK:T1078",
+      "retrieved_ids": [
+        "ATTACK:T1087",
+        "ATTACK:T1078",
+        "ATTACK:T1078.004",
+        "ATTACK:T1078.003",
+        "ATTACK:T1078.002",
+        "ATTACK:T1078.001",
+        "ATTACK:M1032",
+        "ATTACK:T1621"
+      ],
+      "retrieval_pass": true,
+      "status": "needs_review",
+      "claim_count": 24,
+      "supported_claim_count": 24,
+      "elapsed_ms": 12.46
+    },
+    {
+      "question": "CVE-2099-999999",
+      "expected_id": null,
+      "retrieved_ids": [],
+      "retrieval_pass": true,
+      "status": "needs_review",
+      "claim_count": 0,
+      "supported_claim_count": 0,
+      "elapsed_ms": 11.16
+    },
+    {
+      "question": "CVE-2088-777777",
+      "expected_id": null,
+      "retrieved_ids": [],
+      "retrieval_pass": true,
+      "status": "needs_review",
+      "claim_count": 0,
+      "supported_claim_count": 0,
+      "elapsed_ms": 11.46
+    }
+  ]
+}

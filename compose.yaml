@@ -1,0 +1,60 @@
+name: threatleans
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: threatleans
+      POSTGRES_USER: threatleans
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes: ["postgres:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U threatleans"]
+      interval: 5s
+      retries: 20
+    restart: unless-stopped
+  qdrant:
+    image: qdrant/qdrant:v1.17.0
+    volumes: ["qdrant:/qdrant/storage"]
+    restart: unless-stopped
+  api:
+    build: .
+    env_file: .env
+    environment:
+      THREATLEANS_DATABASE_URL: postgresql+psycopg://threatleans:${POSTGRES_PASSWORD}@postgres:5432/threatleans
+      THREATLEANS_AUTH_REQUIRED: "true"
+      THREATLEANS_HOST: 0.0.0.0
+      THREATLEANS_DATA_DIR: /app/data
+      THREATLEANS_QDRANT_URL: http://qdrant:6333
+      THREATLEANS_DENSE_ENABLED: ${THREATLEANS_DENSE_ENABLED:-false}
+      THREATLEANS_ALLOWED_ORIGINS: '["${THREATLEANS_PUBLIC_URL:-http://localhost}"]'
+    volumes: ["evidence:/app/data"]
+    depends_on:
+      postgres: {condition: service_healthy}
+      qdrant: {condition: service_started}
+    restart: unless-stopped
+  worker:
+    build: .
+    command: ["threatleans", "worker"]
+    env_file: .env
+    environment:
+      THREATLEANS_DATABASE_URL: postgresql+psycopg://threatleans:${POSTGRES_PASSWORD}@postgres:5432/threatleans
+      THREATLEANS_DATA_DIR: /app/data
+    volumes: ["evidence:/app/data"]
+    depends_on: {postgres: {condition: service_healthy}}
+    restart: unless-stopped
+  web:
+    image: nginx:1.28-alpine
+    ports: ["${THREATLEANS_BIND_ADDRESS:-127.0.0.1}:8080:80"]
+    volumes: ["./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro"]
+    depends_on: [api]
+    restart: unless-stopped
+  ollama:
+    image: ollama/ollama:0.17.0
+    profiles: ["local-ai"]
+    volumes: ["ollama:/root/.ollama"]
+    restart: unless-stopped
+volumes:
+  postgres:
+  qdrant:
+  evidence:
+  ollama:

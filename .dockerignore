@@ -1,0 +1,9 @@
+.venv
+frontend/node_modules
+data
+tmp
+output
+.git
+.env
+.impeccable
+*.pdf

@@ -1,0 +1,26 @@
+.venv/
+node_modules/
+frontend/dist/
+data/runtime/
+data/raw/
+data/models/
+data/index/
+.env
+.pytest_cache/
+__pycache__/
+*.pyc
+coverage/
+test-results/
+playwright-report/
+.impeccable/review/
+tmp/
+output/
+*.pdf
+
+
+# Local author data and build artifacts
+Girijesh_B_Resume.tex
+.impeccable/
+*.tsbuildinfo
+.ruff_cache/
+*.egg-info/
