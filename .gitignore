@@ -24,3 +24,4 @@ Girijesh_B_Resume.tex
 *.tsbuildinfo
 .ruff_cache/
 *.egg-info/
+BUILD_STATUS.md
